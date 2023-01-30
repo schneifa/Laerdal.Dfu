@@ -5,6 +5,7 @@ using System;
 using System.Threading.Tasks;
 
 using Laerdal.Dfu.Helpers;
+using TaskCompletionSource = Laerdal.Dfu.Helpers.TaskCompletionSource;
 
 namespace Laerdal.Dfu
 {
@@ -382,5 +383,7 @@ namespace Laerdal.Dfu
         }
     }
 
-    public partial class DfuInstallation : SharedDfuInstallation { }
+    public partial class DfuInstallation : SharedDfuInstallation
+    {
+    }
 }

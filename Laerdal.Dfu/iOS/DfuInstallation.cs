@@ -23,13 +23,12 @@ namespace Laerdal.Dfu
             DfuServiceDelegate = new DfuServiceDelegate(this);
             DfuPeripheralSelectorDelegate = new DfuPeripheralSelectorDelegate(this);
 
-            Firmware = new Laerdal.Dfu.iOS.DFUFirmware(new NSUrl(FileUrl, false), out NSError error);
+            Firmware = new Laerdal.Dfu.iOS.DFUFirmware(new NSUrl(FileUrl, false));
             
             Initiator = new Laerdal.Dfu.iOS.DFUServiceInitiator(Queue.Invoke(), 
                                                                 DelegateQueue.Invoke(), 
                                                                 ProgressQueue.Invoke(), 
-                                                                LoggerQueue.Invoke(),
-                                                                null)
+                                                                LoggerQueue.Invoke())
             {
                 Logger = new DfuLogger(),
                 WeakProgressDelegate = DfuProgressDelegate,
