@@ -1,12 +1,12 @@
 <Project Sdk="MSBuild.Sdk.Extras/3.0.44">
 
     <PropertyGroup>
-        <TargetFrameworks>net6.0-android</TargetFrameworks>
+        <TargetFrameworks>net6.0-ios;net6.0-android</TargetFrameworks>
 
-        <LaerdalPackageName>Laerdal.Dfu</LaerdalPackageName>
+        <LaerdalPackageName>Laerdal.Dfu.Net6Fork</LaerdalPackageName>
         <LaerdalPackageTags>Ble;Tools;Xamarin;Dfu;Bluetooth;Nordic;Semiconductor</LaerdalPackageTags>
         <LaerdalPackageCopyright>François Raminosona, Laerdal Medical</LaerdalPackageCopyright>
-        <LaerdalPackageDescription>Xamarin wrapper around Nordic.Dfu for iOS and Android.</LaerdalPackageDescription>
+        <LaerdalPackageDescription>Xamarin wrapper around Nordic.Dfu for iOS and Android. Forked by Kyle Whittington for upgrade to .NET 6.</LaerdalPackageDescription>
         <LaerdalRepositoryUrl>https://github.com/Laerdal/Laerdal.Dfu</LaerdalRepositoryUrl>
     </PropertyGroup>
 
