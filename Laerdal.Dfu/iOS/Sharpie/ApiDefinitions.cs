@@ -29,9 +29,9 @@ namespace Laerdal.Dfu.iOS
 		[NullAllowed, Export ("fileName")]
 		string FileName { get; }
 
-		// @property (readonly, copy, nonatomic) NSURL * _Nullable fileUrl;
+		// @property (readonly, copy, nonatomic) URL * _Nullable fileUrl;
 		[NullAllowed, Export ("fileUrl", ArgumentSemantic.Copy)]
-		NSUrl FileUrl { get; }
+		Url FileUrl { get; }
 
 		// @property (readonly, nonatomic) BOOL valid;
 		[Export ("valid")]
@@ -45,14 +45,14 @@ namespace Laerdal.Dfu.iOS
 		[Export ("parts")]
 		nint Parts { get; }
 
-		// -(instancetype _Nullable)initWithUrlToZipFile:(NSURL * _Nonnull)urlToZipFile error:(NSError * _Nullable * _Nullable)error;
+		// -(instancetype _Nullable)initWithUrlToZipFile:(URL * _Nonnull)urlToZipFile error:(NSError * _Nullable * _Nullable)error;
 		[Export ("initWithUrlToZipFile:error:")]
-		NativeHandle Constructor (NSUrl urlToZipFile, [NullAllowed] out NSError error);
+		NativeHandle Constructor (Url urlToZipFile, [NullAllowed] out NSError error);
 
-		// -(instancetype _Nullable)initWithUrlToZipFile:(NSURL * _Nonnull)urlToZipFile type:(enum DFUFirmwareType)type error:(NSError * _Nullable * _Nullable)error __attribute__((objc_designated_initializer));
+		// -(instancetype _Nullable)initWithUrlToZipFile:(URL * _Nonnull)urlToZipFile type:(enum DFUFirmwareType)type error:(NSError * _Nullable * _Nullable)error __attribute__((objc_designated_initializer));
 		[Export ("initWithUrlToZipFile:type:error:")]
 		[DesignatedInitializer]
-		NativeHandle Constructor (NSUrl urlToZipFile, DFUFirmwareType type, [NullAllowed] out NSError error);
+		NativeHandle Constructor (Url urlToZipFile, DFUFirmwareType type, [NullAllowed] out NSError error);
 
 		// -(instancetype _Nullable)initWithZipFile:(NSData * _Nonnull)zipFile error:(NSError * _Nullable * _Nullable)error;
 		[Export ("initWithZipFile:error:")]
@@ -63,10 +63,10 @@ namespace Laerdal.Dfu.iOS
 		[DesignatedInitializer]
 		NativeHandle Constructor (NSData zipFile, DFUFirmwareType type, [NullAllowed] out NSError error);
 
-		// -(instancetype _Nullable)initWithUrlToBinOrHexFile:(NSURL * _Nonnull)urlToBinOrHexFile urlToDatFile:(NSURL * _Nullable)urlToDatFile type:(enum DFUFirmwareType)type error:(NSError * _Nullable * _Nullable)error __attribute__((objc_designated_initializer));
+		// -(instancetype _Nullable)initWithUrlToBinOrHexFile:(URL * _Nonnull)urlToBinOrHexFile urlToDatFile:(URL * _Nullable)urlToDatFile type:(enum DFUFirmwareType)type error:(NSError * _Nullable * _Nullable)error __attribute__((objc_designated_initializer));
 		[Export ("initWithUrlToBinOrHexFile:urlToDatFile:type:error:")]
 		[DesignatedInitializer]
-		NativeHandle Constructor (NSUrl urlToBinOrHexFile, [NullAllowed] NSUrl urlToDatFile, DFUFirmwareType type, [NullAllowed] out NSError error);
+		NativeHandle Constructor (Url urlToBinOrHexFile, [NullAllowed] Url urlToDatFile, DFUFirmwareType type, [NullAllowed] out NSError error);
 
 		// -(instancetype _Nonnull)initWithBinFile:(NSData * _Nonnull)binFile datFile:(NSData * _Nullable)datFile type:(enum DFUFirmwareType)type __attribute__((objc_designated_initializer));
 		[Export ("initWithBinFile:datFile:type:")]
