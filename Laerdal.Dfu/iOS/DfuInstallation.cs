@@ -25,7 +25,7 @@ namespace Laerdal.Dfu
 
             Firmware = new Laerdal.Dfu.iOS.DFUFirmware(new Url(FileUrl, false), out NSError error);
             
-            Initiator = new Laerdal.Dfu.iOS.DFUServiceInitiator(Queue.Invoske(), 
+            Initiator = new Laerdal.Dfu.iOS.DFUServiceInitiator(Queue.Invoke(), 
                                                                 DelegateQueue.Invoke(), 
                                                                 ProgressQueue.Invoke(), 
                                                                 LoggerQueue.Invoke(),
